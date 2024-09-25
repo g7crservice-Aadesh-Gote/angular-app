@@ -1,0 +1,30 @@
+
+<form (ngSubmit)="addTodo()" #todoForm="ngForm">
+    <input 
+      [(ngModel)]="newTodoTitle" 
+      name="todoTitle" 
+      placeholder="Enter todo title" 
+      required 
+      #title="ngModel"
+    />
+    
+    <!-- Show error message if input is invalid -->
+    <div *ngIf="title.invalid && title.touched" class="error">
+      Todo title is required.
+    </div>
+
+    <!-- Disable button if form is invalid -->
+    <button [disabled]="todoForm.invalid">Add Todo</button>
+  </form>
+
+
+<div *ngFor="let todo of todos; let i = index">
+
+    <div class="boxcard">
+        <p>{{todo?.id}}.</p>
+        <p>{{todo?.title}} </p>  
+        <button class="removebtn" (click)="removetodo(i)">Remove</button>
+      
+    </div>
+
+</div>

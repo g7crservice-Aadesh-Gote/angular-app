@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 mb-4" *ngFor="let user of aboutDatas">
+      <div class="card h-100" style="width: 100%; padding: 10px">
+        <div class="d-flex align-items-center">
+          <img
+            [src]="user.image"
+            class="rounded-circle"
+            width="50"
+            height="50"
+            alt="{{ user.firstName }}'s image"
+          />
+          <div class="ms-3">
+            <h5 class="card-title">{{ user.firstName }} {{ user.lastName }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+              {{ user.company.title }}
+            </h6>
+          </div>
+        </div>
+        <div class="card-body p-2">
+          <p class="card-text">
+            Age: {{ user.age }} <br />
+            City: {{ user.address.city }} <br />
+            Email: {{ user.email }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

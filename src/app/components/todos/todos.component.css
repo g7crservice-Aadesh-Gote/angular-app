@@ -1,0 +1,15 @@
+.boxcard {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.removebtn{
+    background-color: red !important;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 4px;
+    cursor: pointer;
+}
